@@ -8,7 +8,7 @@ const AddWidgetButton = ({ onAdd }: { onAdd: () => void }) => {
       color="primary"
       onClick={onAdd}
       sx={{
-        boxShadow: 1, // Adding light shadow
+        boxShadow: 1,
       }}
     >
       Add Widget

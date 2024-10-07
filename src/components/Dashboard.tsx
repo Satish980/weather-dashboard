@@ -28,13 +28,19 @@ const Dashboard = () => {
 
   return (
     <Box sx={{ bgcolor: 'background.default', p: 2, minHeight: '100vh' }}>
-      <Box sx={{ gap: '12px' }}>
+      <Box sx={{
+        display: 'flex',
+        justifyContent: 'flex-start'
+      }}>
+      <Box sx={{ justifyContent: 'space-between' }}>
         <AddWidgetButton onAdd={handleAddWidget} />
+        {/* <Box flexGrow={1} /> */}
         <TemperatureToggleButton />
       </Box>
+      </Box>
       <Grid container spacing={2} sx={{ mt: 2 }}>
-        {widgets.map((id) => (
-          <Grid item xs={12} sm={6} md={4} key={id}>
+        {widgets.map((id, index) => (
+          <Grid item xs={12} sm={6} md={4} key={id+index}>
             <WeatherWidget id={id} onDelete={handleDeleteWidget} />
           </Grid>
         ))}

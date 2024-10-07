@@ -41,11 +41,6 @@ const theme = createTheme({
       textTransform: 'none',
     },
   },
-  // shadows: [
-  //   'none',
-  //   '0px 1px 3px rgba(0, 0, 0, 0.2)',
-  //   '0px 3px 6px rgba(0, 0, 0, 0.15)', // Add more shadows as needed
-  // ],
 });
 
 export default theme;
