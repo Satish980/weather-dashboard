@@ -1,25 +1,35 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
-type TemperatureContextType = {
+interface TemperatureContextProps {
   isCelsius: boolean;
   toggleUnit: () => void;
+}
+
+const TemperatureContext = createContext<TemperatureContextProps | undefined>(undefined);
+
+export const useTemperature = () => {
+  const context = useContext(TemperatureContext);
+  if (!context) {
+    throw new Error('useTemperature must be used within a TemperatureProvider');
+  }
+  return context;
 };
 
-// Define the props for the provider, including children
-type TemperatureProviderProps = {
-  children: ReactNode;
-};
-
-const TemperatureContext = createContext<TemperatureContextType>({
-  isCelsius: true,
-  toggleUnit: () => {},
-});
-
-export const TemperatureProvider: React.FC<TemperatureProviderProps> = ({ children }) => {
-  const [isCelsius, setIsCelsius] = useState<boolean>(true);
+export const TemperatureProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const LOCAL_STORAGE_UNIT_KEY = 'weather-dashboard-unit';
+  
+  // Loading temperature unit from localStorage or default to Celsius
+  const [isCelsius, setIsCelsius] = useState<boolean>(() => {
+    const savedUnit = localStorage.getItem(LOCAL_STORAGE_UNIT_KEY);
+    return savedUnit ? JSON.parse(savedUnit) : true;
+  });
 
   const toggleUnit = () => {
-    setIsCelsius(!isCelsius);
+    setIsCelsius((prevUnit) => {
+      const newUnit = !prevUnit;
+      localStorage.setItem(LOCAL_STORAGE_UNIT_KEY, JSON.stringify(newUnit));
+      return newUnit;
+    });
   };
 
   return (
@@ -28,5 +38,3 @@ export const TemperatureProvider: React.FC<TemperatureProviderProps> = ({ childr
     </TemperatureContext.Provider>
   );
 };
-
-export const useTemperature = () => useContext(TemperatureContext);
