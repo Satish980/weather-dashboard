@@ -34,7 +34,6 @@ const Dashboard = () => {
       }}>
       <Box sx={{ justifyContent: 'space-between' }}>
         <AddWidgetButton onAdd={handleAddWidget} />
-        {/* <Box flexGrow={1} /> */}
         <TemperatureToggleButton />
       </Box>
       </Box>
