@@ -26,6 +26,12 @@ The **Configurable Weather Dashboard** is a simple and user-friendly web applica
 - **Styling**:
   - **CSS-in-JS**: Utilized through Material-UI's styling solutions.
 
+## Live Demo
+
+You can view the deployed application at the following link:
+
+[Configurable Weather Dashboard](https://weather-dashboard-980.netlify.app/)
+
 ## Local Setup
 
 To get started with the Configurable Weather Dashboard, follow these steps:
