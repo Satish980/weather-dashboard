@@ -1,5 +1,3 @@
-
-<!-- ```markdown -->
 # Configurable Weather Dashboard
 
 ## Overview
@@ -63,5 +61,3 @@ Make sure you have the following installed on your machine:
 
 5. **Open in Browser**: 
    Visit `http://localhost:3000` in your web browser to view the dashboard.
-
-<!-- ``` -->
