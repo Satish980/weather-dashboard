@@ -32,6 +32,16 @@ You can view the deployed application at the following link:
 
 [Configurable Weather Dashboard](https://weather-dashboard-980.netlify.app/)
 
+- Initial app with default widget
+  - ![image](https://github.com/user-attachments/assets/cdf945f3-bb6b-4194-b0bb-6c24e010df26)
+
+- Adding a widget
+  - ![image](https://github.com/user-attachments/assets/9fc28eab-6843-4d43-90d2-1393c5fa4c34)
+
+- Changing to Fahrenheit
+  - ![image](https://github.com/user-attachments/assets/d7605482-9d9b-4a4c-9e11-b6b11c122320)
+
+
 ## Local Setup
 
 To get started with the Configurable Weather Dashboard, follow these steps:
